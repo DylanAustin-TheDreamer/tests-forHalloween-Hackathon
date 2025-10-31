@@ -1,6 +1,6 @@
 // retrieve elements and add event listeners for ghost and pumpkin
 document.addEventListener('DOMContentLoaded', () => {
-
+const modal = document.getElementById('modal');
 const ghostImg = document.getElementById('ghost');
 const button = document.getElementById('animate-ghost');
 const buttonPumpkin = document.getElementById('animate-pumpkin');
@@ -24,14 +24,29 @@ let death = false;
 let dungeon = false;
 
 // retrieve elements and add event listeners for the super hero wizard
+const buttonPlay = document.getElementById('start-button');
+const backgroundimg = document.getElementById('start-game');
+const newDiv = document.createElement('div');
+newDiv.innerHTML = 'Autumn Dungeon';
+newDiv.id = 'my-title';
+
+buttonPlay.addEventListener('click', startGame);
+function startGame() {
+    buttonPlay.style.display = 'none';
+    backgroundimg.appendChild(newDiv);
+    backgroundimg.id = 'scene';
+    backgroundMusic.currentTime = 0;
+    backgroundMusic.play();
+    buttonWizard.style.display = 'inline-block';
+    document.getElementById('modal').classList.add('fade-out');
+}
+
 
 buttonWizard.addEventListener('click', animateWizard);
 function animateWizard() {
+    backgroundimg.style.background = "url('assets/images/graveyard.jpg') no-repeat";
     wizardImg.classList.remove('ghost');
     wizardImg.classList.add('ghost-visible');
-    console.log('Wizard button clicked: playing backgroundMusic');
-    backgroundMusic.currentTime = 0;
-    backgroundMusic.play();
 }
 
 button.addEventListener('click', animateGhosts);

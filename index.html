@@ -9,12 +9,19 @@
 
 </head>
 <body>
+<div id="modal"></div>
+<div id="background">
     <section class="container mt-5 d-flex justify-content-center align-items-center flex-column" style="overflow: hidden;">
+        <div id="start-game">
         <div id="wizard" class="ghost">
             <img src="assets/images/wizard.png" alt="Wizard" style="width: 450px; height: auto;">
         </div>
-        <button id="animate-wizard" class="btn btn-primary mt-4">Click Me!</button>
+        <button id="start-button">Insert 10p</button>
+        <button id="animate-wizard" class="btn btn-primary mt-4" style="display: none;">Click Me!</button>
+
+    </div>
     </section>
+</div>
 
     <section class="container mt-5 d-flex justify-content-center align-items-center flex-column" style="overflow: hidden;">
         <div id="ghost" class="ghost">
@@ -22,7 +29,7 @@
         </div>
         <button id="animate-ghost" class="btn btn-primary mt-4">Click Me!</button>
     </section>
-    
+
     <section class="container mt-5 d-flex justify-content-center align-items-center flex-column" style="overflow: hidden;">
         <div id="pumpkin" class="ghost">
             <img src="assets/images/sad pumpkin.png" alt="Pumpkin" style="width: 450px; height: auto;">
